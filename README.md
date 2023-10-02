@@ -1,5 +1,6 @@
 # Deep Learning Model to Detect Emotions through Brain-Waves
-This project is part of our Biomedical Engineering course project work. Emotional response was recorded via the Ultracortex Mark IV EEG helmet on the open BCI software, divided in three categories of negative, neutral and positive and trained on a deep learning model. 
+This project deals with Developing  a music recommendation application that utilizes deep learning to analyze user’s brainwave signals (EEG) and
+recommend music that aligns with their emotional state.
 
 # What are Brain Waves? 
 Brainwaves are electrical impulses in the brain. An individual’s behaviour, emotions, and thoughts are communicated between neurons within our brains. All brainwaves are produced by synchronised electrical pulses from masses of neurons communicating with each other. Our brainwaves occur at various frequencies. Some are fast and some are slow. They are measured in cycles per second or hertz (Hz).
@@ -74,8 +75,3 @@ Accuracy: 95%
 
 
 
-# Team Members
-* Rohan Srinivasan (Me) (Linkedin: https://www.linkedin.com/in/rohan-srinivasan-2457591b1/)
-* Peddi Giridhar (https://github.com/Giridhar4) (Linkedin: https://www.linkedin.com/in/giridhar-peddi-68485519b/)
-* Simone Singh (Linkedin: https://www.linkedin.com/in/simone-singh-29946a143/)
-* Sanjana Golaya (Linkedin: https://www.linkedin.com/in/sanjana-golaya/)
