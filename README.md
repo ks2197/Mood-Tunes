@@ -1,42 +1,81 @@
+# Deep Learning Model to Detect Emotions through Brain-Waves
+This project is part of our Biomedical Engineering course project work. Emotional response was recorded via the Ultracortex Mark IV EEG helmet on the open BCI software, divided in three categories of negative, neutral and positive and trained on a deep learning model. 
 
-# Mood BrainConnect
+# What are Brain Waves? 
+Brainwaves are electrical impulses in the brain. An individual’s behaviour, emotions, and thoughts are communicated between neurons within our brains. All brainwaves are produced by synchronised electrical pulses from masses of neurons communicating with each other. Our brainwaves occur at various frequencies. Some are fast and some are slow. They are measured in cycles per second or hertz (Hz).
+The classic names of these EEG bands are: 
+* Delta Brainwaves (1-3 Hz)
+* Theta Brainwaves (4-7 Hz)
+* Alpha Brainwaves (8-12 Hz)
+* Beta Brainwaves (13 – 38 Hz) 
+* Gamma Brainwaves (39 – 42 Hz)
 
-This repository comprises the code for emotion recognition, which utilizes wavelet transform and SVM classifiers with an RBF kernel.
+Each of us, however, always has some degree of each of these brainwave bands present in different parts of our brain. Delta brainwaves will also occur when areas of the brain go “off line” to take up nourishment. If we are becoming drowsy, there are more delta and slow theta
+brainwaves creeping in. If we are inattentive to external things and our mind is wandering, there is more theta present. If we are exceptionally anxious and tense, an excessively high frequency of beta brainwaves is often present.
 
+# How does EEG detect brain activites?
+An electroencephalogram (EEG) is a test that measures electrical activity in the brain using small, metal discs (electrodes) attached to the scalp. Brain cells communicate via electrical impulses and are active all the time, even during asleep. This activity shows up as wavy lines on an EEG recording. 
 
-## Abstract:
-This project aims to propose emotion recognition using electroencephalography (EEG) techniques.​ ​An electroencephalogram (EEG) is a machine that detects electrical activity in a human brain using small metal discs (electrodes) attached to the scalp. The brain cells communicate via electrical impulses and are active all the time, even when we are asleep. This activity shows up as wavy lines on an EEG recording.
-## Dataset Summary:
-The data set contains downsampled signal, preprocessed and segmented versions of the EEG data in Matlab (.mat file). The data was downsampled to 200Hz. A bandpass frequency filter from 0-75Hz was applied. EEG segments were extracted according to the duration of clips. There are a total of 45 .mat (Matlab) files, one for each experiment. Each subject performed the experiment three times with an interval of about one week. Each subject file contains 16 arrays. 15 arrays contain segmented preprocessed EEG data of 15 trials in one experiment (eeg_1~eeg_15, channel×data). An array named ‘labels’ contains the label of the corresponding emotional labels (-1 for negative, 0 for neutral and +1 for positive). The detailed order of the channels is included in the dataset.
-##  Steps Involved:
-Preprocessing: The initial step involves data preprocessing, where we apply a filtering process to the EEG data, restricting it to the 0-75Hz frequency range. This results in a new matrix with a 200Hz sampling frequency. We employ a Finite Impulse Response 'Low pass filter,' with a filter order of 5 (or 10 if needed), to ensure data stability after processing. 
+# EEG Helmet
+An EEG headset is a wearable device for electroencephalography, a monitoring method to record the electrical activity of the brain. EEG sensors in headsets place electrodes along the scalp to detect brain activity. Analyzing EEG data supports the study of cognitive processes. Doctors can use EEG to diagnose medical issues, researchers can use this method to understand brain processes, and individuals can use EEG to improve their productivity and wellness via monitoring their moods and emotions, developers can use EEG for BCI to execute direct mental commands in app development and many other use cases.
+There are a few different types of EEG headsets. Comparison is often drawn between dry electrode EEG headsets and wet electrode arrays. Wet electrodes use a conductive gel, saline fluid or other material to improve signal quality. This ensures the EEG device captures high-quality data. Most dry EEG headsets provide good quality readings, so the conductive gel is not normally required unless high- quality data is required for specific clinical reasons or high accuracy.
 
+# Open BCI 
+OpenBCI is an open-source brain-computer interface platform.
+OpenBCI boards can be used to measure and record electrical activity produced by the brain (EEG), muscles (EMG), and heart (EKG), and is compatible with standard EEG electrodes. The OpenBCI boards can be used with the open source OpenBCI GUI, or they can be integrated with other open-source EEG signal processing tools.
 
-
-Feature Extraction: Subsequently, we move to feature extraction. In this phase, we dissect the preprocessed EEG input into five distinct frequency sub-bands utilizing the powerful technique of wavelet filter banks. These filter banks enable the isolation of various EEG signal types, including alpha, beta, gamma, delta, and theta waves. This separation is achieved through an iterative process of applying filters, yielding high-pass (detail coefficient) and low-pass (approximation coefficient) components. This iterative process is repeated for each channel, resulting in the extraction of entropy and energy features for each sub-band, resulting in a total of 10 features per channel and a comprehensive 620 features for each preprocessed EEG signal.
-
-Entropy: Entropy measurement is a vital aspect of our approach, as it quantifies the level of uncertainty within the EEG signals. This measurement reflects the potential configurations or predictability of the signals, a crucial component in emotion recognition.
-
-Energy: Wavelet energy analysis complements our feature extraction process. It provides insights into the distribution of principal lines, wrinkles, and ridges across various resolutions or scales within the EEG data, further enhancing our understanding of emotional states.
-
-Feature Reduction: To manage the dimensionality of the extracted features, we employ Principal Component Analysis (PCA). PCA is a fundamental technique that transforms correlated features into uncorrelated principal components (PCs) through singular value decomposition. This process involves mean normalization, covariance matrix computation, eigenvalue and eigenvector derivation, and ultimately, the extraction of reduced features or principal components (PCs).
-
-Classification: In the final phase, we employ the PCs obtained from the feature reduction step as input for a Support Vector Machine (SVM) classifier. This classifier plays a pivotal role in predicting emotional states based on the transformed EEG features, ultimately providing a valuable tool for emotion recognition.
-
-This project's success is indebted to the following key components:
-
-
-Wavelet Transform: 
-  Utilized for precise frequency analysis and feature extraction.
-Principal Components Analysis: Employed for feature dimensionality reduction.
-Support Vector Machines: Essential for classifying emotional states.
-
-Seed Dataset: The foundational data source that enabled our research to thrive.
+![emotion1](https://user-images.githubusercontent.com/102278418/183085800-9f31d8e1-5d58-4975-9d4c-bba85416980c.jpg)
 
 
-Note: Dataset was taken from SEED Dataset
+# Ultracortex Mark IV Helmet
+The Ultracortex is an open-source, 3D-printable headset intended to work with any OpenBCI Board. It is capable of recording research-grade brain activity (EEG), muscle activity (EMG), and heart activity (ECG). It is not designed for transcranial stimulation. This headset is designed to receive EEG signals only. The Ultracortex Mark IV is capable of sampling up to 16 channels of EEG from up to 35 different 10-20 locations.
+
+![emotion6](https://user-images.githubusercontent.com/102278418/183085821-70105a86-0fe2-46f2-a450-a229e3c2f0dc.jpg)
+
+
+## Dependencies
+* Python (3.6 or higher)
+* Pandas
+* Keras 
+* Tensorflow 
+* Numpy
+* Matplotlib
+
+### This project is ran/tested on Google Colab. 
+
+# Dataset 
+* For this dataset, brainwaves of a user during certain movie scenes and used them to calculate whether the same brain wave frequency would be emitted by different users over the same scene. Emotional response was categorised between positive, negative and neutral.
+* Dataset was collected via Open BCI software using an EEG headset with 8 sensors.
+* With each scensor, the particular brainwave emitted was calculated by the sensor nodes on the EEG headset and recorded on the Open BCI software. The waveform data is then pre-processed into arrays and used for the deep learning model.
+### FFT Representation of dataset
+![emotion2](https://user-images.githubusercontent.com/102278418/183085924-8938c8cd-d5a7-4dc8-9bab-25c2d2be5ed2.jpg)
+
+
+# Model Architecture
+
+## CNN Model 
+* A CNN (Convolutional Neural Networks) based model was used as our base algorithm. 
+* Softmax activation function was to determine the accuracy.
+* Epochs Trained on : 50
+
+# Results
+Accuracy: 95%  
+
+### Train vs Test Accuracy Graph
+![emotion5](https://user-images.githubusercontent.com/102278418/183086020-1c528964-9bf0-4ba9-bf48-4646a207f7c9.jpg)
+
+
+### Train vs Test Loss Graph
+![emotion4](https://user-images.githubusercontent.com/102278418/183086031-2025cd6a-32ba-46db-85f6-421b34180e74.jpg)
+
+
+### Confusion Matrix
+![emotion3](https://user-images.githubusercontent.com/102278418/183085989-9ce33ba4-8097-438d-abff-f1b94686b16b.jpg)
 
 
 
-
-
+# Team Members
+* Rohan Srinivasan (Me) (Linkedin: https://www.linkedin.com/in/rohan-srinivasan-2457591b1/)
+* Peddi Giridhar (https://github.com/Giridhar4) (Linkedin: https://www.linkedin.com/in/giridhar-peddi-68485519b/)
+* Simone Singh (Linkedin: https://www.linkedin.com/in/simone-singh-29946a143/)
+* Sanjana Golaya (Linkedin: https://www.linkedin.com/in/sanjana-golaya/)
