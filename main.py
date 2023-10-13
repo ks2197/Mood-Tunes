@@ -15,7 +15,7 @@ plt.plot(range(len(sample)),sample)
 plt.title('Features fft_0_b through fft_749_b')
 plt.show()
 data['label'].value_counts()
-label_mapping = {'NEGATIVE':0, 'NEUTRAL': 1, 'POSITIVE': 2}
+label_mapping = {'IMPARTIAL':0, 'ANTAGNOISTIC': 1, 'FAVORABLE': 2}
 
 # Data Pre-Process
 def preprocess_inputs(df):
