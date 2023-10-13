@@ -1,4 +1,4 @@
-# Deep Learning Model to Detect Emotions through Brain-Waves
+# MoodTunes
 This project deals with Developing  a music recommendation application that utilizes deep learning to analyze user’s brainwave signals (EEG) and
 recommend music that aligns with their emotional state.
 
