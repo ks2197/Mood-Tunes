@@ -2,7 +2,11 @@
 This project deals with Developing  a music recommendation application that utilizes deep learning to analyze user’s brainwave signals (EEG) and
 recommend music that aligns with their emotional state.
 
+
 # What are Brain Waves? 
+Brain waves are oscillating electrical voltages in the brain measuring just a few millionths of a volt. There are five widely recognized brain waves, and the main frequencies of human EEG waves are listed in Table along with their characteristics.
+![emotion1](https://app.gemoo.com/share/image-annotation/571419002847232000?codeId=DW2QNla0L6a2m&origin=imageurlgenerator)
+
 Brainwaves are electrical impulses in the brain. An individual’s behaviour, emotions, and thoughts are communicated between neurons within our brains. All brainwaves are produced by synchronised electrical pulses from masses of neurons communicating with each other. Our brainwaves occur at various frequencies. Some are fast and some are slow. They are measured in cycles per second or hertz (Hz).
 The classic names of these EEG bands are: 
 * Delta Brainwaves (1-3 Hz)
